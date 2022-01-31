@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 sh_url="raw.githubusercontent.com/q992218196/smartdns/main"
-sh_ver="1.0.5"
+sh_ver="1.0.6"
 smartdns_Release="35"
 smartdns_ver="1.2021.08.27-1923"
 smartdns_url="https://github.com/pymumu/smartdns/releases/download/Release${smartdns_Release}/smartdns.${smartdns_ver}.x86_64-linux-all.tar.gz"
@@ -73,7 +73,8 @@ menu(){
     
     1，安装
     2，卸载
-    3，检查脚本更新
+    3，修改配置文件
+    4，检查脚本更新
     0，退出脚本
     "
     read -e -p " 请输入数字 :" num
@@ -85,6 +86,11 @@ menu(){
 	    smartdns_uninstall
 	    ;;
 	    3)
+	    vi /etc/smartdns/smartdns.conf
+	    systemctl restart smartdns
+	    echo "重启smartdns完成"
+	    ;;
+	    4)
 	    Update_Shell
 	    ;;
 	    0)
