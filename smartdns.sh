@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 sh_url="raw.githubusercontent.com/q992218196/smartdns/main"
-sh_ver="1.0.4"
+sh_ver="1.0.5"
 smartdns_Release="35"
 smartdns_ver="1.2021.08.27-1923"
 smartdns_url="https://github.com/pymumu/smartdns/releases/download/Release${smartdns_Release}/smartdns.${smartdns_ver}.x86_64-linux-all.tar.gz"
@@ -68,11 +68,12 @@ check_version(){
 menu(){
     echo "
         smartdns 一键安装脚本 浩瀚星辰 [v${sh_ver}]
-    Tips：本脚本仅集成了一键安装功能，如需卸载请手动删除系统服务，请使用管理员权限运行
+    Tips：本脚本仅集成了一键安装/卸载功能，请使用root权限运行
     Github：https://github.com/q992218196/
     
-    1，开始安装
-    2，检查脚本更新
+    1，安装
+    2，卸载
+    3，检查脚本更新
     0，退出脚本
     "
     read -e -p " 请输入数字 :" num
@@ -81,6 +82,9 @@ menu(){
 	    smartdns_install
 	    ;;
 	    2)
+	    smartdns_uninstall
+	    ;;
+	    3)
 	    Update_Shell
 	    ;;
 	    0)
@@ -104,10 +108,15 @@ smartdns_install(){
     mkdir /root/.smartdns
     wget ${smartdns_url} -O /root/.smartdns/smartdns_x86_64-linux-all.tar.gz
     tar -zxvf /root/.smartdns/smartdns_x86_64-linux-all.tar.gz -C /root/.smartdns
-    chmod +x /root/.smartdns/smartdns/install
-    ./root/.smartdns/smartdns/install -i
+    bash /root/.smartdns/smartdns/install -i
     echo "检查运行状态"
     systemctl status smartdns
+}
+
+smartdns_uninstall(){
+    bash /root/.smartdns/smartdns/install -u
+    rm -rf /root/.smartdns
+    echo "卸载完成"
 }
 
 check_sys
