@@ -107,3 +107,5 @@ smartdns_install(){
     echo "检查运行状态"
     systemctl status smartdns
 }
+
+menu
