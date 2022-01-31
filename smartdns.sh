@@ -66,7 +66,8 @@ check_version(){
 }
 
 menu(){
-    echo && echo -e "smartdns 一键安装脚本 浩瀚星辰 [v${sh_ver}]
+    echo "
+        smartdns 一键安装脚本 浩瀚星辰 [v${sh_ver}]
     Tips：本脚本仅集成了一键安装功能，如需卸载请手动删除系统服务，请使用管理员权限运行
     Github：https://github.com/q992218196/
     
