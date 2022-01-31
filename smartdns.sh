@@ -108,4 +108,6 @@ smartdns_install(){
     systemctl status smartdns
 }
 
+check_sys
+check_version
 menu
