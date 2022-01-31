@@ -1,2 +1,1 @@
-# smartdns
-One click installation of smartdns
+本站集成了smartdns的一键安装脚本
