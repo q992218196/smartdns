@@ -75,7 +75,7 @@ menu(){
     2，检查脚本更新
     0，退出脚本
     "
-    read -e -p " 请输入数字 [1-8]:" num
+    read -e -p " 请输入数字 :" num
         case "$num" in
 	    1)
 	    smartdns_install
