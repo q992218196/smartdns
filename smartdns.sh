@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 sh_url="raw.githubusercontent.com/q992218196/smartdns/main"
-sh_ver="1.0.1"
+sh_ver="1.0.2"
 smartdns_Release="35"
 smartdns_ver="1.2021.08.27-1923"
 smartdns_url="https://github.com/pymumu/smartdns/releases/download/Release${smartdns_Release}/smartdns.${smartdns_ver}.x86_64-linux-all.tar.gz"
